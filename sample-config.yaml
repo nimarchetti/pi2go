@@ -1,27 +1,29 @@
 Account:
-    Username: 
-    Password: 
+    Username:
+    Password:
 Files:
-    Cache: /app/cache.json
-    XMLTV: /app/xml.xml
+    Cache: /app/USA_cache.json
+    XMLTV: /app/USA.xml
 Options:
-    Poster Aspect: 3x4
-    Schedule Days: 1
-    Subtitle into Description: false
-    Insert credits tag into XML file: false
+    Poster Aspect: all
+    Schedule Days: 3
+    Subtitle into Description: true
+    Insert credits tag into XML file: true
     Local Images Cache: true
-    Images Path: /app/images
+    Images Path: /app/images/
     Proxy Images: false
-    Hostname: localhost:9090
+    Image Live and New Icons: true
+    Hostname: localhost:8112
     Rating:
-        Insert rating tag into XML file: true
+        Insert rating tag into XML file: false
         Maximum rating entries. 0 for all entries: 1
         Preferred countries. ISO 3166-1 alpha-3 country code. Leave empty for all systems:
-          - USA
+            - USA
         Use country code as rating system: false
     Show download errors from Schedules Direct in the log: true
 Station:
-  - Name: HBO
-    ID: "19548"
-    Lineup: USA-IL67050-X
-# Keep adding channels as needed
+    - Name: HBO Family
+      ID: "16585"
+      Lineup: USA-IL67050-X
+    
+
