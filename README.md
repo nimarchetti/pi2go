@@ -1,4 +1,11 @@
-# This is a Fork of the abandoned (?) Guide2Go project
+# This is a Fork of the Chuchodavids guide2go, originally based on mar-mei's guide2go
+
+I haven't nyet updated this documentation, except for these inistial paragraphs
+
+The intention here is to create a reaspberry pi docker image that will have a scheduled download of guide data, to run alongside a threadfin docker container
+
+--- original docs here:
+
 I implemented changes that were missing in the current Guide2Go version.
 
 **Recent changes:**
