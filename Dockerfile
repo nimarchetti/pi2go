@@ -7,26 +7,19 @@ RUN go mod init main
 RUN go get
 RUN go build -o guide2go
 
-FROM alpine:3.17.2
-ENV USER=docker
-ENV UID=12345
-ENV GID=23456
+FROM alpine:latest
+RUN apk update
+RUN apk upgrade
 
-RUN addgroup "${USER}" -g "${GID}"
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "$(pwd)" \
-    --ingroup "$USER" \
-    --no-create-home \
-    --uid "$UID" \
-    "$USER"
+RUN apk add --no-cache ca-certificates
 
-RUN mkdir /app
-RUN chown ${USER} -R /app
-WORKDIR /app
-COPY --from=builder --chown="${USER}":"${GID}" /app/guide2go /usr/local/bin/guide2go
-COPY --chown="${USER}":"${GID}" sample-config.yaml /app/sample-config.yaml
+MAINTAINER nimarchetti nik@incorporation.co.uk
 
-USER "${USER}"
-CMD [ "guide2go", "--config", "/app/config.yaml" ]
+# Extras
+RUN apk add --no-cache curl
+
+# Add Bash shell & dependancies
+RUN apk add --no-cache bash
+
+# Volumes
+VOLUME /guide2go
